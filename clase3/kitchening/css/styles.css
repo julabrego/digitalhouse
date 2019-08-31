@@ -1,0 +1,184 @@
+*{
+  box-sizing: border-box;
+}
+body{
+  margin: 0;
+  padding: 0;
+  background-image: url('../images/bg-body.png');
+  font-family: Arial, san-sans-serif;
+}
+.container{
+  width:1180px;
+  position:relative;
+  margin: 0 auto;
+  padding-top:15px;
+}
+
+header {
+  text-align: center;
+}
+
+.logo{
+  display: block;
+  margin: 0 auto;
+  width:180px;
+  border-radius:90px;
+}
+.main-nav{
+  width:100%;
+  height:50px;
+  display:block;
+}
+
+ul{
+  list-style: none;
+  padding-left: 0;
+}
+.main-nav ul li{
+  display:inline-block;
+  float:left;
+  color:white;
+  width:180px;
+  height:50px;
+  padding-top:17px;
+  margin: 0 10px;
+  background-color: #444444;
+}
+
+.modificadorMarginLeftCero{
+  margin-left:0!important;
+}
+
+.modificadorMarginRightCero{
+  margin-right:0!important;
+}
+
+.main-nav ul li a{
+  color:white;
+  text-decoration: none;
+  text-transform: uppercase;
+  padding:25px;
+}
+
+.toggle-nav{
+  display:none;
+}
+
+.banner{
+  width:100%;
+  margin-top:20px;
+  margin-bottom: 30px;
+}
+
+.banner img{
+  width:100%;
+}
+
+.vip-products{
+  width:100%;
+  overflow: hidden;
+}
+
+.product{
+  float:left;
+  width:380px;
+  margin-bottom:30px;
+  margin-right:6px;
+  margin-left:6px;
+}
+
+.product:first-child{
+  margin-left:0;
+}
+
+.product:last-child{
+  margin-right:0;
+}
+.product .photo-container{
+  position:relative;
+  height:202px;
+}
+
+.photo-container img{
+  position: absolute;
+}
+
+.photo-container .photo{
+  width:100%;
+}
+
+.photo-container .special{
+  right:5px;
+  top:0;
+}
+
+.photo-container .zoom{
+  position: absolute;
+  top: 90px;
+  display: block;
+  width: 100%;
+  text-align: center;
+  text-transform: uppercase;
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  text-decoration: none;
+  padding:5px 0;
+}
+
+.photo-container .zoom:hover{
+  text-decoration:underline;
+}
+
+.product h2{
+  font-weight: bold;
+  font-size: 1.3em;
+  line-height: 1em;
+}
+
+.product p{
+  font-size: 1em;
+  color: #656766;
+}
+
+.product .more{
+  display: inline-block;
+  padding:10px;
+  background-color:#444444;
+  color:white;
+  text-decoration: none;
+}
+
+.main-footer{
+  background: red;
+  height: 100px;
+  border-radius: 50px 50px 0 0;
+  padding-top: 30px;
+  text-align: center;
+}
+
+.main-footer ul{
+  list-style: none;
+  padding-left: 0;
+  display: inline-block;
+}
+
+.main-footer ul li{
+  float:left;
+  padding: 0 20px;
+  border-right: solid white;
+  text-transform: capitalize;
+  font-weight: bold;
+}
+
+.main-footer ul li:last-child{
+  border-right: 0;
+}
+
+.main-footer a{
+  color:white;
+  text-decoration: none;
+}
+
+.main-footer a:hover{
+  text-decoration: underline;
+}

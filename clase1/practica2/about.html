@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <script type="text/javascript">
+    function escalera (pisos){
+      var espacios;
+      var escalon;
+      var linea;
+      var cuantosEspacios = 0;
+      var cuantosNumerales = 0;
+      var escalera = [];
+
+      for (var i = pisos; i > 0; i--){
+        cuantosEspacios = i - 1;
+        cuantosNumerales = pisos - cuantosEspacios;
+        espacios = " ".repeat(cuantosEspacios);
+        escalon = "#".repeat(cuantosNumerales)
+        linea = espacios + escalon;
+
+        escalera.push(linea)
+      }
+      return escalera;
+    }
+
+    </script>
+    <meta charset="utf-8">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans|Raleway:400,700|Work+Sans:400,700&display=swap" rel="stylesheet">
+    <title></title>
+  </head>
+  <body>
+
+  </body>
+</html>
