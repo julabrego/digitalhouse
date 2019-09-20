@@ -35,8 +35,10 @@ tenido errores! ¿Se te ocurre cómo hacerlo?
 
 <?php
 
+// Declaro variables en blanco para completar los campos del formulario
 $nombre = $username = $email = $password = $confirmar = "";
 
+// Declaro el array de error en blanco, porque en principio no hay ningún mensaje que mostrar
 $mensaje_error = [
   'nombre' => "",
   'username' => "",
@@ -45,42 +47,46 @@ $mensaje_error = [
   'confirmar' => "",
 ];
 
+// Chequeo que se esté o no recibiendo algo por post
 if ($_POST){
 
-
-  if ($_POST['nombre'] == ""){
+  // Valido el campo nombre completo
+  if ($_POST['nombre'] == ""){ // Si está vacío
     $mensaje_error['nombre'] = "Complete su nombre completo";
-  }elseif(strlen($_POST['nombre']) < 3){
+  }elseif(strlen($_POST['nombre']) < 3){ // Si tiene menos de 4 caracteres
     $mensaje_error['nombre'] = "El nombre debe tener al menos cuatro caracteres";
-  }else{
+  }else{ // Si todo está bien sobreescribo variable $nombre con el valor correspondiente
     $nombre = $_POST['nombre'];
   }
 
-  if ($_POST['username'] == ""){
+  // Valido el campo username
+  if ($_POST['username'] == ""){ // Si está vacío
     $mensaje_error['username'] = "Complete su nombre de usuario";
-  }elseif(strlen($_POST['username']) < 6){
+  }elseif(strlen($_POST['username']) < 6){ // Si tiene menos de 6 caracteres
     $mensaje_error['username'] = "El nombre de usuario debe tener al menos seis caracteres";
-  }else{
+  }else{ // Si todo está bien sobreescribo la variable $username con el valor correspondiente
     $username = $_POST['username'];
   }
 
-  if ($_POST['email'] == ""){
+  // Valido el campo email
+  if ($_POST['email'] == ""){ // Si está vacío
     $mensaje_error['email'] = "Complete su email";
-  }elseif(!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)){
+  }elseif(!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)){ // Si no tiene formato correcto
     $mensaje_error['email'] = "El formato del email no es correcto";
-  }else{
+  }else{ // Si todo está bien completo la variable $email con el valor correspondiente
     $email = $_POST['email'];
   }
 
-  if ($_POST['password'] == "" && $_POST['confirmar'] == ""){
+  // Valido la contraseña y la confirmación de contraseña
+  if ($_POST['password'] == "" && $_POST['confirmar'] == ""){ // Si ambos campos están vacíos
     $mensaje_error['password'] = "Complete y confirme su contraseña";
     $mensaje_error['confirmar'] = "Complete y confirme su contraseña";
-  }elseif ($_POST['password'] == "" && $_POST['confirmar'] != ""){
+  }elseif ($_POST['password'] == "" && $_POST['confirmar'] != ""){ // Si sólo contraseña está vacío
     $mensaje_error['password'] = "Complete la contraseña";
-  }elseif ($_POST['password'] != "" && $_POST['confirmar'] == ""){
+  }elseif ($_POST['password'] != "" && $_POST['confirmar'] == ""){ // Si sólo confirmar está vacío
     $mensaje_error['password'] = "Confirme su contraseña";
     $mensaje_error['confirmar'] = "Confirme su contraseña";
-  }elseif ($_POST['password'] != $_POST['confirmar']){
+  }elseif ($_POST['password'] != $_POST['confirmar']){ // Si no coinciden los campos
     $mensaje_error['password'] = "Las contraseñas no coinciden";
     $mensaje_error['confirmar'] = "Las contraseñas no coinciden";
   }
